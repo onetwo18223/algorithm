@@ -8,9 +8,5 @@ package org.problem.sort;
  *  结束条件为只有一个元素存在
  */
 public class QuickSort {
-
     QuickSort(){}
-
-
-
 }
