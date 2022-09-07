@@ -1,5 +1,8 @@
 package org.problem.sort.quicksort;
 
+import org.util.Util;
+
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -71,11 +74,9 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{2, 7, 9, 10, 123, 123, 23, 342, 0, 1};
+        int[] nums = Util.getArray();
         QuickSort quick = new QuickSort();
         quick.sort(nums);
-        for (int num : nums) {
-            System.out.println(num);
-        }
+        Arrays.stream(nums).forEach(System.out::println);
     }
 }
