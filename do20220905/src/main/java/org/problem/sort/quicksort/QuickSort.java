@@ -1,4 +1,4 @@
-package org.problem.sort;
+package org.problem.sort.quicksort;
 
 import java.util.Random;
 
@@ -56,6 +56,7 @@ public class QuickSort {
         /*
         非常愚蠢的问题但也容易忽视的问题：为啥要交换标定点start 和 j的位置？
         因为是排序，应该让合适的值（标定点值）处于中心位置
+        这个标定点的位置在排序中一定是正确的
         */
         swap(nums, j, start);
 
