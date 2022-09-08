@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Util {
 
-    final static int ARRAY_NUM = 100;
+    final static int ARRAY_NUM = 20;
 
     public static int[] getArray() {
         int[] nums = new int[ARRAY_NUM];
