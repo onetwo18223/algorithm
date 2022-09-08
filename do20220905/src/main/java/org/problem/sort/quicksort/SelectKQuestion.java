@@ -18,6 +18,9 @@ public class SelectKQuestion {
     public int selectK(int[] nums, int start, int end, int k) {
         int p = partition(nums, start, end);
         // 题目一般要求值，返回nums[index]即可
+        // 注意k和p的比较，在本方法中，使用的是降序排序
+        // 若是k较大，表示索引对应的值较小，所以要去右侧查询
+        // 若是升序排序，k较小，表示索引对应的值较小，所以要去右侧查询
         if (k == p) {
             return nums[p];
         } else if (k > p) {
@@ -40,23 +43,25 @@ public class SelectKQuestion {
 //        if (start >= end) {
 //            return 0;
 //        }
-        int p = start + new Random().nextInt(end - start);
-        swap(nums, start, p);
+        if (start < end) {
+            int random = start + new Random().nextInt(end - start);
+            swap(nums, start, random);
+        }
 
         int i = start + 1, j = end;
-        while (true) {
+
+        while (i <= j) {
             while (i <= j && nums[i] > nums[start]) {
                 i++;
             }
             while (i <= j && nums[j] < nums[start]) {
                 j--;
             }
-            if (i >= j) {
-                break;
+            if (i <= j) {
+                swap(nums, i, j);
+                i++;
+                j--;
             }
-            swap(nums, i, j);
-            i++;
-            j--;
         }
         swap(nums, start, j);
         return j;
@@ -72,6 +77,9 @@ public class SelectKQuestion {
         int[] nums = Util.getArray();
         Arrays.stream(nums).forEach(System.out::println);
         SelectKQuestion test = new SelectKQuestion();
+        new QuickSort().sort(nums);
+        System.out.println("test");
+        Arrays.stream(nums).forEach(System.out::println);
         System.out.println("\nreq:" + test.selectK(nums, 2));
     }
 }
