@@ -9,10 +9,16 @@ import java.util.Random;
  * 获取到数组中第K索引的值
  * Select题目可以使用优先队列和快速选择（快速排序变形）
  */
-public class SelectKQuestion {
+public class SelectKQuestion1 {
 
+    /**
+     * @param nums
+     * @param k    第K大的元素对应的索引位置
+     *             需要注意转换，例如第一大的元素索引位置是在0
+     * @return
+     */
     public int selectK(int[] nums, int k) {
-        return selectK(nums, 0, nums.length - 1, k);
+        return selectK(nums, 0, nums.length - 1, k - 1);
     }
 
     public int selectK(int[] nums, int start, int end, int k) {
@@ -76,10 +82,10 @@ public class SelectKQuestion {
     public static void main(String[] args) {
         int[] nums = Util.getArray();
         Arrays.stream(nums).forEach(System.out::println);
-        SelectKQuestion test = new SelectKQuestion();
+        SelectKQuestion1 test = new SelectKQuestion1();
         new QuickSort().sort(nums);
         System.out.println("test");
         Arrays.stream(nums).forEach(System.out::println);
-        System.out.println("\nreq:" + test.selectK(nums, 2));
+        System.out.println("\nreq:" + test.selectK(nums, 5));
     }
 }
