@@ -1,8 +1,7 @@
 package org.structure;
 
 import java.util.ArrayList;
-
-import static java.util.Collections.swap;
+import java.util.Random;
 
 /**
  * 最大堆实现
@@ -20,6 +19,18 @@ public class MaxHeap {
         array = new ArrayList<Integer>();
     }
 
+    int parent(int index) {
+        return (index - 1) / 2;
+    }
+
+    int leftChild(int index) {
+        return index * 2 + 1;
+    }
+
+    int rightChild(int index) {
+        return leftChild(index) + 1;
+    }
+
     /**
      * 添加节点到树
      * 先将节点添加到数组尾部
@@ -30,10 +41,17 @@ public class MaxHeap {
     public void addNode(int num) {
         array.add(num);
         int index = array.size() - 1;
-        int parentIndex = (index - 1) / 2;
-        while (index - 1 >= 0 && array.get(index) > array.get(parentIndex)) {
-            swap(array, index, parentIndex);
-            parentIndex = (index - 1) / 2;
+        siftUp(index);
+    }
+
+    /**
+     * 将索引对应值向上移动到正确位置
+     * @param index 索引
+     */
+    public void siftUp(int index) {
+        while (index > 0 && array.get(index) > array.get(parent(index))) {
+            swap(array, index, parent(index));
+            index = parent(index);
         }
     }
 
@@ -61,43 +79,52 @@ public class MaxHeap {
         int temp = getMax();
 
         int index = 0;
-        int removeIndex = array.size() - 1;
-        swap(array, index, removeIndex);
-        array.remove(removeIndex);
-        int leftIndex = 0, rightIndex = 0;
-        while (true) {
-            // 左节点
-            leftIndex = index * 2 + 1;
-            rightIndex = index * 2 + 2;
-            if (rightIndex < array.size() - 1 &&
-                    (array.get(index) < array.get(leftIndex) || array.get(index) < array.get(rightIndex))) {
-                if (array.get(leftIndex) > array.get(rightIndex)) {
-                    swap(array, leftIndex, index);
-                    index = leftIndex;
-                } else {
-                    swap(array, rightIndex, index);
-                    index = rightIndex;
-                }
+        int lastIndex = array.size() - 1;
+        swap(array, index, lastIndex);
+        array.remove(lastIndex);
+        siftDown(index);
+
+        return temp;
+    }
+
+    public void siftDown(int index){
+        // 先判断是否存在左子节点
+        while (leftChild(index) < array.size()) {
+            int j = leftChild(index);
+            if (j + 1 < array.size() && array.get(j + 1) > array.get(j)) {
+                j++;
+            }
+            if (array.get(j) > array.get(index)) {
+                swap(array, j, index);
+                index = j;
             } else {
                 break;
             }
         }
-        return temp;
+    }
+
+    private void swap(ArrayList<Integer> data, int k, int parent) {
+        int e = data.get(k);
+        data.set(k, data.get(parent));
+        data.set(parent, e);
     }
 
     public static void main(String[] args) throws Exception {
-        MaxHeap heap = new MaxHeap();
-        heap.addNode(10);
-        heap.addNode(1100);
-        heap.addNode(89);
-        heap.addNode(98);
-        heap.addNode(67);
-        heap.addNode(34);
-        heap.addNode(12);
-        heap.addNode(1);
-        System.out.println("heap.getMax() = " + heap.getMax());
-        System.out.println("heap.removeNode() = " + heap.removeNode());
-        System.out.println("heap.removeNode() = " + heap.removeNode());
-        System.out.println("heap.getMax() = " + heap.getMax());
+
+        int n = 1000000;
+
+        MaxHeap maxHeap = new MaxHeap();
+        Random random = new Random();
+        for (int i = 0; i < n; i++)
+            maxHeap.addNode(random.nextInt(Integer.MAX_VALUE));
+
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++)
+            arr[i] = maxHeap.removeNode();
+
+        for (int i = 1; i < n; i++)
+            if (arr[i - 1] < arr[i]) throw new Exception("Error");
+
+        System.out.println("Test MaxHeap completed.");
     }
 }
