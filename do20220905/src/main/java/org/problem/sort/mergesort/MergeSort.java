@@ -23,7 +23,11 @@ public class MergeSort {
         sort(nums, start, mid);
         // 注意应该是 mid + 1，而不是 mid, 原因是上一行sort已经分过该元素了
         sort(nums, mid + 1, end);
-        merge(nums, start, mid, end);
+
+        // 如果合并的时候 mid + 1 > mid 那就说明整个数组是有序的
+        if (nums[mid + 1] < nums[mid]) {
+            merge(nums, start, mid, end);
+        }
     }
 
     private void merge(int[] nums, int start, int mid, int end) {
@@ -57,9 +61,15 @@ public class MergeSort {
         }
     }
 
-    public static void main(String[] args) {
-        int[] nums = Util.getArray();
-        new MergeSort().sort(nums);
-        Arrays.stream(nums).forEach(System.out::println);
+    public static void main(String[] args) throws Exception {
+
+        int n = 1000000;
+        int[] arr = new int[n];
+
+        new MergeSort().sort(arr);
+
+        for (int i = 1; i < n; i++)
+            if (arr[i - 1] < arr[i]) throw new Exception("Error");
+        System.out.println("Test completed.");
     }
 }
