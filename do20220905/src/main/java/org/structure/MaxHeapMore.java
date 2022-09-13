@@ -46,6 +46,7 @@ public class MaxHeapMore {
 
     /**
      * 将索引对应值向上移动到正确位置
+     *
      * @param index 索引
      */
     public void siftUp(int index) {
@@ -87,7 +88,7 @@ public class MaxHeapMore {
         return temp;
     }
 
-    public void siftDown(int index){
+    public void siftDown(int index) {
         // 先判断是否存在左子节点
         while (leftChild(index) < array.size()) {
             int j = leftChild(index);
@@ -96,6 +97,27 @@ public class MaxHeapMore {
             }
             if (array.get(j) > array.get(index)) {
                 swap(array, j, index);
+                index = j;
+            } else {
+                break;
+            }
+        }
+    }
+
+    /**
+     * 限制下沉的区域
+     *
+     * @param end   结束点
+     * @param index 需要下沉的索引
+     */
+    public void siftDown(int[] nums, int end, int index) {
+        while (leftChild(index) <= end) {
+            int j = leftChild(index);
+            if (j + 1 <= end && nums[j + 1] > nums[j]) {
+                j++;
+            }
+            if (nums[j] > nums[index]) {
+                swap(nums, j, index);
                 index = j;
             } else {
                 break;
@@ -119,7 +141,7 @@ public class MaxHeapMore {
      * 将数组转换为堆形式
      * 实现：获取lastIndex的父节点，从该父节点开始往前调用下沉siftDown操作
      */
-    public void heapify(int[] nums){
+    public void heapify(int[] nums) {
         if (nums.length == 0) return;
         int lastIndex = nums.length - 1;
         for (int i = parent(lastIndex); i >= 0; i--) {
@@ -133,7 +155,13 @@ public class MaxHeapMore {
         data.set(parent, e);
     }
 
-    public static void main(String[] args) throws Exception {
+    private void swap(int[] nums, int index1, int index2) {
+        int temp = nums[index1];
+        nums[index1] = nums[index2];
+        nums[index2] = temp;
+    }
+
+    /*public static void main(String[] args) throws Exception {
 
         int n = 1000000;
 
@@ -141,10 +169,10 @@ public class MaxHeapMore {
         int[] arr = new int[n];
         Random random = new Random();
 
-        /*for (int i = 0; i < n; i++)
-            maxHeap.addNode(random.nextInt(Integer.MAX_VALUE));*/
-        /*for (int i = 0; i < n; i++)
-            arr[i] = maxHeap.removeNode();*/
+        *//*for (int i = 0; i < n; i++)
+            maxHeap.addNode(random.nextInt(Integer.MAX_VALUE));*//*
+     *//*for (int i = 0; i < n; i++)
+            arr[i] = maxHeap.removeNode();*//*
 
         // 覆盖数值，测试 heapify()
         for (int i = 0; i < n; i++)
@@ -157,5 +185,69 @@ public class MaxHeapMore {
             if (arr[i - 1] < arr[i]) throw new Exception("Error");
 
         System.out.println("Test MaxHeap completed.");
+    }*/
+
+    /**
+     * 对Sort进行优化
+     * 优化1：使用heapify生成数组为堆结构
+     * 优化2：实现原地排序，需要重写siftDown()方法
+     */
+    public void sort(int[] nums) {
+        if (nums.length <= 1) return;
+        // 生成堆
+        heapify(nums);
+        for (int i = nums.length - 1; i >= 0; i--) {
+            // 交换第一个节点和最后一个节点， 那么最后一个节点就是最大值
+            swap(nums, 0, i);
+            // 下沉交换后的第0个节点
+            siftDown(nums, i, 0);
+        }
     }
+
+    /**
+     * 测试优化sort
+     *
+     * @param args
+     */
+    public static void main(String[] args) throws Exception {
+        MaxHeapMore heap = new MaxHeapMore();
+        int n = 1000000;
+        int[] arr = new int[n];
+        Random random = new Random();
+        for (int i = 0; i < n; i++)
+            arr[i] = random.nextInt(Integer.MAX_VALUE);
+
+        heap.heapify(arr);
+        heap.sort(arr);
+        for (int i = 1; i < n; i++)
+            if (arr[i - 1] < arr[i]) throw new Exception("Error");
+
+        System.out.println("Test MaxHeap completed.");
+    }
+
+    /*public static void main(String[] args) throws Exception {
+
+        int n = 1000000;
+
+        MaxHeapMore maxHeap = new MaxHeapMore();
+        int[] arr = new int[n];
+        Random random = new Random();
+
+        *//*for (int i = 0; i < n; i++)
+            maxHeap.addNode(random.nextInt(Integer.MAX_VALUE));*//*
+     *//*for (int i = 0; i < n; i++)
+            arr[i] = maxHeap.removeNode();*//*
+
+        // 覆盖数值，测试 heapify()
+        for (int i = 0; i < n; i++)
+            arr[i] = random.nextInt(Integer.MAX_VALUE);
+        maxHeap.heapify(arr);
+        for (int i = 0; i < n; i++)
+            arr[i] = maxHeap.removeNode();
+
+        for (int i = 1; i < n; i++)
+            if (arr[i - 1] < arr[i]) throw new Exception("Error");
+
+        System.out.println("Test MaxHeap completed.");
+    }*/
 }
