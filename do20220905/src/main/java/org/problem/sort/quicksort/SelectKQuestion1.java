@@ -45,7 +45,6 @@ public class SelectKQuestion1 {
      */
     public int partition(int[] nums, int start, int end) {
         // 因为是快速选择，所以不可能不存在要寻找的数值，
-        // 递归条件发生变化，那么这个结束条件也就可以省略
 //        if (start >= end) {
 //            return 0;
 //        }
