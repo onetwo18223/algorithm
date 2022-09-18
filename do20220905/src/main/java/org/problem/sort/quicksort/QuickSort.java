@@ -73,10 +73,22 @@ public class QuickSort {
         nums[index2] = num;
     }
 
-    public static void main(String[] args) {
-        int[] nums = Util.getArray();
+    public static void main(String[] args) throws Exception {
+
         QuickSort quick = new QuickSort();
-        quick.sort(nums);
-        Arrays.stream(nums).forEach(System.out::println);
+
+        int n = 1000000;
+        Random random = new Random();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++)
+            arr[i] = random.nextInt(Integer.MAX_VALUE);
+
+        quick.sort(arr);
+
+        for (int i = 1; i < n; i++)
+            if (arr[i - 1] < arr[i]) throw new Exception("Error");
+
+        System.out.println("Test MaxHeap completed.");
     }
 }
