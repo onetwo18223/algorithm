@@ -12,11 +12,6 @@ Question31  数组划分
 代码：
 ```java
 public class Solution {
-    /**
-     * @param nums: The integer array you should partition
-     * @param k: An integer
-     * @return: The index after partition
-     */
     public int partitionArray(int[] nums, int k) {
         // write your code here
     }
