@@ -1,4 +1,4 @@
-package org.structure;
+package org.structure.heap;
 
 import java.util.ArrayList;
 import java.util.Random;
