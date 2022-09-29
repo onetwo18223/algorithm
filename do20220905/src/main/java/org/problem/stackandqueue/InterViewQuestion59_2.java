@@ -15,6 +15,7 @@ import java.util.Deque;
  *
  * 使用ArrayDeque最好使用 addLast()（添加结点一般都是在尾部添加） removeFirst() 或者 removeLast() ，
  *      方便自己建造队列或者栈
+ *
  */
 public class InterViewQuestion59_2 {
     class MaxQueue {
