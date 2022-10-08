@@ -5,6 +5,14 @@ import java.util.Map;
 
 /**
  * LRU 缓存
+ *
+ * 知识点1：如何实现双向链表？
+ *      Node节点包含了pre和next
+ *      构造函数中需要将head.next = tail, tail.pre = head;
+ *      添加节点方法和删除方法实现
+ * 知识点2：为何使用双向链表而不是双端队列？
+ *      在实现LRU缓存时使用到的双向链表更多操作是关于更新操作的
+ *      链表更新效率更高，数组更新效率相对低一些
  */
 public class Question146 {
 
