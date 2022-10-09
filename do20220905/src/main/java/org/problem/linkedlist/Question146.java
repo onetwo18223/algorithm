@@ -91,7 +91,6 @@ public class Question146 {
          * 创建基于 Node 节点的双向链表
          * head 头结点
          * tail 尾节点
-         *
          */
         class DoubleLinkedList {
             // 头结点
