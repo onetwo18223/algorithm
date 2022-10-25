@@ -108,7 +108,7 @@ public int minCut(String s) {
 // write your code here
 }
 
-### Question437
+### Question437 书籍复印
 描述
 给定n本书，第i本书有pages[i]页。有k个人来抄这些书。
 这些书排成一行，每个人都可以索取连续一段的书。例如，
@@ -212,6 +212,7 @@ public int backPackII(int m, int[] a, int[] v) {
 }
 
 ### Question440 背包问题 III
+dp[i][j] = max(dp[i - 1][j] + v)
 描述
 给定 n 种物品, 每种物品都有无限个. 第 i 个物品的体积为 A[i], 价值为 V[i].
 再给定一个容量为 m 的背包. 问可以装入背包的最大价值是多少?
