@@ -50,6 +50,5 @@ public class Question125 {
             }
             return true;
         }
-
     }
 }

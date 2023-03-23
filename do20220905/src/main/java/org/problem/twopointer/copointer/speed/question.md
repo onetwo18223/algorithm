@@ -20,6 +20,3 @@
 例2：
 输入：nums[1, 1], target = 0
 输出：[1, 1]
-
-### Question1870
-### Question521
