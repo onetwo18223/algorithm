@@ -5,6 +5,10 @@ import java.util.List;
 
 /**
  * 和为s的连续正数序列
+ *
+ * 类似于相向twoSum
+ * 类比Question1 TwoSum 和 Question209
+ * 对比Question3 滑动窗口的不同实现
  */
 public class OfferQuestion57 {
     class Solution {
@@ -15,6 +19,7 @@ public class OfferQuestion57 {
             ArrayList<ArrayList<Integer>> arrayList = new ArrayList();
             int start = 1, end = 1;
             int sum = 0;
+            // 左右指针共同移动，求和
             while (end < target) {
                 if (sum == target) {
                     ArrayList<Integer> list = new ArrayList();
@@ -29,7 +34,7 @@ public class OfferQuestion57 {
         }
 
         public Integer[][] toArrayMethod1(ArrayList<ArrayList<Integer>> list) {
-            List<Integer[]> tempList = new ArrayList<>();
+            List<Integer[]> tempList = new ArrayList<Integer[]>();
             for (List<Integer> subList : list) {
                 // 如何使用toArray
 //            tempList.add((Integer[])subList.toArray());
@@ -64,7 +69,7 @@ public class OfferQuestion57 {
      * @return
      */
     public Integer[][] toArrayMethod1(ArrayList<ArrayList<Integer>> list) {
-        List<Integer[]> tempList = new ArrayList<>();
+        List<Integer[]> tempList = new ArrayList<Integer[]>();
         for (List<Integer> subList : list) {
             // 如何使用toArray
 //            tempList.add((Integer[])subList.toArray());

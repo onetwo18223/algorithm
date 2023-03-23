@@ -165,6 +165,7 @@ public int backPackV(int[] nums, int target) {
 // write your code here
 }
 
+## 背包问题
 ### Question564 背包问题 VI
 描述
 给出 n 个物品, 以及一个数组, nums[i] 代表第i个物品的大小,

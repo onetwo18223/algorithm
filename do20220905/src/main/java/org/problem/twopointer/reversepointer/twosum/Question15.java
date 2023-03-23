@@ -14,7 +14,7 @@ import java.util.List;
 public class Question15 {
     class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
-            ArrayList<List<Integer>> arrayList = new ArrayList<>();
+            ArrayList<List<Integer>> arrayList = new ArrayList<List<Integer>>();
             if (nums == null || nums.length == 0) {
                 return arrayList;
             }
@@ -28,7 +28,7 @@ public class Question15 {
                 while (l < r) {
                     int sum = nums[l] + nums[r];
                     if (sum == target) {
-                        ArrayList<Integer> list = new ArrayList<>();
+                        ArrayList<Integer> list = new ArrayList<Integer>();
                         list.add(nums[i]);
                         list.add(nums[l]);
                         list.add(nums[r]);

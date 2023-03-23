@@ -6,7 +6,7 @@ import java.util.Map;
 /**
  * 最长不含重复字符的子字符串
  * <p>
- * 实现1：使用滑动窗口，但是题目涉及到对‘重复’的需求，所以可以有HashMap参与
+ * 实现：使用滑动窗口，但是题目涉及到对‘重复’的需求，所以可以有HashMap参与
  * 窗口左端和窗口右端
  * 也就是使用HashMap获取到index充
  */
@@ -31,7 +31,6 @@ public class Question3 {
             }
             return max;
         }
-
     }
     class Solution2 {
         public int lengthOfLongestSubstring(String s) {
