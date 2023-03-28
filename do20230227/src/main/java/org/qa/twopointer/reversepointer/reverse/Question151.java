@@ -4,10 +4,8 @@ package org.qa.twopointer.reversepointer.reverse;
  * @Desc 反转字符串中的单词
  * https://leetcode.cn/problems/reverse-words-in-a-string/
  * 实现：
+ *  整体翻转一次，之后遍历判断获取非连续空格下的字符串进行范围翻转
  *  先对多余空格进行处理
- *  方法1：
- *      整体翻转一次，之后遍历判断获取非连续空格下的字符串进行范围翻转
- *  方法2：
  *
  * @Author bhh
  * @Date 2023-02-28 16:22
