@@ -1,5 +1,9 @@
 package org.qa.sort.heapsort;
 
+import org.qa.sort.quicksort.QuickSortRe;
+
+import java.util.Random;
+
 /**
  * @Desc 堆排
  * 实现：
@@ -15,7 +19,7 @@ public class HeapSortRe {
         // 创建堆
         // 从后往前进行调整，因为越往后调整的次数越少
         // 从最后一个叶子节点的父节点开始
-        for (int i = (nums.length - 1) / 2; i >= 0; i--) {
+        for (int i = (nums.length - 2) / 2; i >= 0; i--) {
             this.adjustHeap(nums, 0, nums.length - 1, i);
         }
         // 获取最大元素，排序，调整堆
@@ -45,13 +49,21 @@ public class HeapSortRe {
         nums[parent] = value;
     }
 
-    public static void main(String[] args) {
-        HeapSortRe sort = new HeapSortRe();
-        int[] nums = {1, 2, 54, 9, 0};
-        sort.sort(nums);
-        for (int num : nums) {
-            System.out.print(num);
-            System.out.print(" ");
-        }
+    public static void main(String[] args) throws Exception {
+        HeapSortRe quick = new HeapSortRe();
+
+        int n = 1000000;
+        Random random = new Random();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++)
+            arr[i] = random.nextInt(Integer.MAX_VALUE);
+
+        quick.sort(arr);
+
+        for (int i = 1; i < n; i++)
+            if (arr[i - 1] > arr[i]) throw new Exception("Error");
+
+        System.out.println("Test MaxHeap completed.");
     }
 }
