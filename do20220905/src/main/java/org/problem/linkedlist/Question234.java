@@ -71,6 +71,7 @@ public class Question234 {
          * @return
          */
         private ListNode getMid(ListNode head) {
+            // 1 2 3 4
             ListNode fast = head, slow = head;
             while(fast.next != null) {
                 if (fast.next.next == null) {

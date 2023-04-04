@@ -14,20 +14,19 @@ public class Question19 {
         public ListNode removeNthFromEnd(ListNode head, int n) {
             if (null == head) return head;
             // 创建虚拟头
-            ListNode pre = new ListNode();
-            pre.next = head;
-
+            ListNode pre = new ListNode(0, head);
+            // 使用快慢双指针寻找要删除节点的前一个节点
             ListNode slow = pre;
-            ListNode fast = pre;
-            while(n > 0) {
-                fast = fast.next;
-                n--;
-            }
+            ListNode fast = pre.next; // head
+            for (int i = 0; i < n; i++) fast = fast.next;
+            // 循环结束slow指向要删除节点的前一个节点
             while(fast != null) {
                 slow = slow.next;
                 fast = fast.next;
             }
-
+            // 删除节点
+            slow.next = slow.next.next;
+            return pre.next;
         }
     }
 }
