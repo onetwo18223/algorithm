@@ -6,15 +6,18 @@ import java.util.Deque;
 /**
  * @Desc 用队列实现栈
  * https://leetcode.cn/problems/implement-stack-using-queues/
- * 实现：
- * 队列：先进先出 栈：先进后出
- * 直接使用队列先进先出的特性无法组成栈，因为永远都是先进先出
- * 需要使用俩个队列将数组进行互倒
  * @Author Bhh
  * @Date 2023-03-31 13:57
  * @Version 1.0
  */
 public class Question225 {
+    {
+        /* 实现：
+        队列：先进先出 栈：先进后出
+        直接使用队列先进先出的特性无法组成栈，因为永远都是先进先出
+        需要使用俩个队列将数组进行互倒
+         */
+    }
     class MyStack {
 
         private Deque<Integer> queue1;

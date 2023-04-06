@@ -10,7 +10,7 @@ package org.qa.tree;
 public class Question230 {
     {
         /* 实现：
-        二叉搜索树类型 || 树的筛选查找
+        二叉搜索树类型 || 树的筛选查找dawd
         复习绑定Question236
          */
     }

@@ -5,15 +5,19 @@ import java.util.Arrays;
 /**
  * @Desc 有效三角形的个数
  * https://leetcode.cn/problems/valid-triangle-number/
- * 实现：
- * 使用双指针，先确定第三边，再使用while确定另外俩条边
- * 俩边之和若大于另外一边，则减少大边
- * 否则增加小边
  * @Author bhh
  * @Date 2023-02-27 16:15
  * @Version 1.0
  */
 public class Question611 {
+    {
+        /* 实现：
+        使用双指针，先确定第三边，再使用while确定另外俩条边
+        俩边之和若大于另外一边，则减少大边
+        否则增加小边
+         */
+    }
+
     class Solution {
         public int triangleNumber(int[] nums) {
 

@@ -3,14 +3,17 @@ package org.qa.twopointer.copointer.sliding;
 /**
  * @Desc 长度最小的子数组
  * https://leetcode.cn/problems/minimum-size-subarray-sum/
- * 实现：
- * 滑动窗口获取和
- *      取最小num
  * @Author bhh
  * @Date 2023-03-27 20:29
  * @Version 1.0
  */
 public class Question209 {
+    {
+        /* 实现：
+        滑动窗口获取和
+        取最小num
+         */
+    }
     class Solution {
         public int minSubArrayLen(int target, int[] nums) {
             if (null == nums || nums.length == 0) return 0;

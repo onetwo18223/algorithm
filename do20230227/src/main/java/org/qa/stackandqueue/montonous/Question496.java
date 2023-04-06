@@ -8,14 +8,17 @@ import java.util.Map;
 /**
  * @Desc 下一个更大元素 I
  * https://leetcode.cn/problems/next-greater-element-i/
- * 实现：
- * 使用单调队列实现，将key值存入队列，遍历，当出现大于nums[key]的元素时，
- *      将这个值存储在(value->key, 较大值value)map中
  * @Author Bhh
  * @Date 2023-03-31 14:35
  * @Version 1.0
  */
 public class Question496 {
+    {
+        /* 实现：
+        使用单调队列实现，将key值存入队列，遍历，当出现大于nums[key]的元素时，
+        将这个值存储在(value->key, 较大值value)map中
+         */
+    }
     class Solution {
         public int[] nextGreaterElement(int[] nums1, int[] nums2) {
             if (null == nums1 || null == nums2 ||

@@ -3,7 +3,7 @@ package org.qa.tree;
 /**
  * @Desc 二叉树展开为链表
  * https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/
- *  right 子指针指向链表中下一个结点，而左子指针始终为 null
+ * right 子指针指向链表中下一个结点，而左子指针始终为 null
  * @Author Bhh
  * @Date 2023-04-04 15:59
  * @Version 1.0

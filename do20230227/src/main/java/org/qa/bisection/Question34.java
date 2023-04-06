@@ -3,13 +3,16 @@ package org.qa.bisection;
 /**
  * @Desc  在排序数组中查找元素的第一个和最后一个位置
  * https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/
- * 实现：
- * 使用二分法（数组有序，查找数target）
  * @Author bhh
  * @Date 2023-03-29 19:54
  * @Version 1.0
  */
 public class Question34 {
+    {
+        /* 实现：
+        使用二分法（数组有序，查找数target）
+         */
+    }
     class Solution {
         public int[] searchRange(int[] nums, int target) {
             if (null == nums || nums.length == 0) return new int[]{-1, -1};

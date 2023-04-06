@@ -3,7 +3,6 @@ package org.qa.linkedlist;
 /**
  * @Desc 反转链表
  * https://leetcode.cn/problems/reverse-linked-list/
- * 实现：
  * 原地翻转实现
  * @Author Bhh
  * @Date 2023-04-03 17:03

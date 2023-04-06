@@ -3,15 +3,15 @@ package org.qa.tree;
 /**
  * @Desc 路径总和
  * https://leetcode.cn/problems/path-sum/
- * 实现：
- * 从根节点到叶子结点的和为target
- *
  * @Author Bhh
  * @Date 2023-04-04 11:06
  * @Version 1.0
  */
 public class Question112 {
-
+    {
+        /* 实现：从根节点到叶子结点的和为target
+         */
+    }
     class TreeNode {
         int val;
         TreeNode left;

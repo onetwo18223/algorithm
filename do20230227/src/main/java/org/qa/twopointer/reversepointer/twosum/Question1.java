@@ -7,14 +7,18 @@ import java.util.Map;
 /**
  * @Desc 两数之和
  * https://leetcode.cn/problems/two-sum/?favorite=2cktkvj
- * 实现：
- * 1、如果返回值，那么使用双指针
- * 2、如果返回索引，那么使用HashMap
  * @Author bhh
  * @Date 2023-02-27 10:04
  * @Version 1.0
  */
 public class Question1 {
+    {
+        /* 实现：
+        如果返回值，那么使用双指针
+        如果返回索引，那么使用HashMap
+         */
+    }
+
     // 返回值-双指针
     class SolutionGoodMethod1 {
         public int[] twoSum(int[] nums, int target) {

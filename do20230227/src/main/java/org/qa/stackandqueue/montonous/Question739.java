@@ -6,13 +6,15 @@ import java.util.Deque;
 /**
  * @Desc 每日温度
  * https://leetcode.cn/problems/daily-temperatures/
- * 实现：
- * 单调栈实现
  * @Author Bhh
  * @Date 2023-03-31 16:21
  * @Version 1.0
  */
 public class Question739 {
+    {
+        /* 实现：单调栈实现
+         */
+    }
     class Solution {
         public int[] dailyTemperatures(int[] nums) {
             if (null == nums || nums.length == 0) return new int[]{};

@@ -4,16 +4,22 @@ package org.qa.linkedlist;
  * @Desc 排序链表
  * https://leetcode.cn/problems/sort-list/
  * 实现：
- * 对应链表来说，可以使用递归的排序方法是最适合的
- * 归并排序和快速排序的选择
- *  快速排序有大量的重拍交换步骤
- *  归并排序整体进行了重拍
- * 所以归并相对更适合链表
+ *
  * @Author Bhh
  * @Date 2023-04-03 10:47
  * @Version 1.0
  */
 public class Question148 {
+    {
+        /* 实现：
+        对应链表来说，可以使用递归的排序方法是最适合的
+        归并排序和快速排序的选择
+         快速排序有大量的重拍交换步骤
+         归并排序整体进行了重拍
+        所以归并相对更适合链表
+         */
+    }
+
     class Solution {
         public ListNode sortList(ListNode head) {
             // TODO: 在归并排序中递归结束条件为：left >= right，

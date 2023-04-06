@@ -6,13 +6,15 @@ import java.util.Map;
 /**
  * @Desc 无重复字符的最长子串
  * https://leetcode.cn/problems/longest-substring-without-repeating-characters/
- * 实现：
- * 使用HashMap + 滑动窗口
  * @Author bhh
  * @Date 2023-03-27 19:19
  * @Version 1.0
  */
 public class Question3 {
+    {
+        /* 实现：使用HashMap + 滑动窗口
+         */
+    }
     class Solution {
         public int lengthOfLongestSubstring(String str) {
             if (null == str || "".equals(str)) return 0;

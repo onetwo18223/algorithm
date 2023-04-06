@@ -3,14 +3,19 @@ package org.qa.linkedlist;
 /**
  * @Desc 两数相加
  * https://leetcode.cn/problems/add-two-numbers/
- * 递归相加链表的俩个节点
- * 若是一方为null则直接返回
- * 需要参数P记录进位
+
  * @Author Bhh
  * @Date 2023-04-03 9:24
  * @Version 1.0
  */
 public class Question2 {
+    {
+        /* 实现：
+        递归相加链表的俩个节点
+        若是一方为null则直接返回
+        需要参数P记录进位
+         */
+    }
     class Solution {
         int p = 0;
         public ListNode addTwoNumbers(ListNode l1, ListNode l2) {

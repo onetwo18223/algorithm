@@ -7,15 +7,19 @@ import java.util.List;
 /**
  * @Desc 三数之和
  * https://leetcode.cn/problems/3sum/?favorite=2cktkvj
- * 实现：
- * 返回值，使用双指针
- * 因为是三个数，所以先固定一个数，然后再使用双指针遍历确定另外俩个数
- * 即使用for+双指针遍历模式
  * @Author bhh
  * @Date 2023-02-27 14:15
  * @Version 1.0
  */
 public class Question15 {
+    {
+        /* 实现：
+        返回值，使用双指针
+        因为是三个数，所以先固定一个数，然后再使用双指针遍历确定另外俩个数
+        即使用for+双指针遍历模式
+         */
+    }
+
     class Solution {
         // [-1,0,1,2,-1,-4]
         public List<List<Integer>> threeSum(int[] nums) {

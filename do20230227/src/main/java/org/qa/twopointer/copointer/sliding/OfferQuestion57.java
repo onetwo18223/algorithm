@@ -6,13 +6,17 @@ import java.util.List;
 /**
  * @Desc 和为s的连续正数序列
  * https://leetcode.cn/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof
- * 实现：
- * 类似于Question209
  * @Author Bhh
  * @Date 2023-03-28 16:20
  * @Version 1.0
  */
 public class OfferQuestion57 {
+    {
+        /* 实现：
+        类似于Question209
+         */
+    }
+
     class Solution {
         public int[][] findContinuousSequence(int target) {
             List<List<Integer>> res = new ArrayList<>();

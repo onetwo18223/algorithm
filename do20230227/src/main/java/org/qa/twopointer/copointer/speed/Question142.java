@@ -3,14 +3,18 @@ package org.qa.twopointer.copointer.speed;
 /**
  * @Desc 环形链表 II
  * https://leetcode.cn/problems/linked-list-cycle-ii/
- * 实现：
- * 类似于Question141环形链表I，先寻找环形链表入口点
- * 然后将head和入口点.next同时步进，相遇点就是所求点
  * @Author bhh
  * @Date 2023-03-01 10:57
  * @Version 1.0
  */
 public class Question142 {
+    {
+        /* 实现：
+        类似于Question141环形链表I，先寻找环形链表入口点
+        然后将head和入口点.next同时步进，相遇点就是所求点
+         */
+    }
+
     public class Solution {
         public ListNode detectCycle(ListNode head) {
             if (null == head) return null;
